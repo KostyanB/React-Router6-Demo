@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 //Navigate для переадресации, парам replace - не сохранять в истории
 import Layout from '../Layout';
-import { About, Blog, Home, NotFound, LogIn } from '../../pages';
+import { About, Blog, Home, NotFound, LogIn, Posts } from '../../pages';
 import { SinglePost, CreatePost, EditPost } from '../../pages/PostSubPages';
 import { AboutMe, ContactMe } from '../../pages/AboutSubPages';
 import AuthRequire from '../Hoks/AuthRequire';
@@ -15,17 +15,19 @@ const AppRoutes = () => (
         <Route path='contacts' element={<ContactMe />} />
       </Route>
       <Route path='about-us' element={<Navigate to='/about' replace />} />
-      <Route path='posts' element={<Blog />} />
-      <Route path='posts/:id' element={<SinglePost />} />
-      <Route path='posts/:id/edit' element={<EditPost />} />
-      <Route
-        path='posts/new'
-        element={
-          <AuthRequire>
-            <CreatePost />
-          </AuthRequire>
-        }
-      />
+      <Route path='posts' element={<Blog />}>
+        <Route index element={<Posts />} />
+        <Route path=':id' element={<SinglePost />} />
+        <Route path=':id/edit' element={<EditPost />} />
+        <Route
+          path='new'
+          element={
+            <AuthRequire>
+              <CreatePost />
+            </AuthRequire>
+          }
+        />
+      </Route>
       <Route path='login' element={<LogIn />} />
       <Route path='*' element={<NotFound />} />
     </Route>
