@@ -1,0 +1,96 @@
+@use 'mixins' as m;
+
+:root {
+  --color-bg: #2c2c32;
+  --color-active: #0f7dc6;
+  --color-error: #f9004b;
+  --anima-duration: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // width: 100vw;
+  // height: 100vh;
+  // overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-bg);
+}
+
+.container {
+  width: Min(900px, 100vw);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0 auto;
+}
+
+.active-nav {
+  color: var(--color-active);
+  cursor: default;
+}
+
+button,
+a,
+input {
+  transition: all var(--anima-duration) ease-in-out;
+}
+
+.button {
+  display: flex;
+  @include m.field;
+
+  &:hover {
+    @include m.hover-colors;
+  }
+}
+
+.error {
+  color: var(--color-error);
+}
+
+form {
+  display: flex;
+  // flex-direction: column;
+  gap: 5px;
+
+  input {
+    @include m.field;
+
+    &:focus {
+      @include m.hover-colors;
+    }
+
+    &[type='submit'],
+    &[type='checkbox'] {
+      cursor: pointer;
+    }
+
+    &[type='submit'] {
+      background: none;
+
+      &:hover {
+        @include m.hover-colors;
+      }
+    }
+
+    &[type='checkbox'] {
+      margin: 0;
+      align-self: center;
+    }
+  }
+
+  label {
+    align-self: center;
+  }
+}

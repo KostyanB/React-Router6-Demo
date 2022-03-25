@@ -1,0 +1,26 @@
+@mixin flex-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@mixin base-colors {
+  border-color: var(--color-bg);
+  color: var(--color-bg);
+}
+
+@mixin hover-colors {
+  border-color: var(--color-active);
+  color: var(--color-active);
+}
+
+@mixin field {
+  width: fit-content;
+  border: 0.5px solid;
+  border-radius: 2px;
+  padding: 3px;
+  font: inherit;
+  @include base-colors;
+}
