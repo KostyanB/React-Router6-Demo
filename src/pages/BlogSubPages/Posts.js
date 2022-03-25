@@ -1,8 +1,7 @@
 import { Link, useSearchParams } from 'react-router-dom';
-import { usePostsContext } from '../context';
-// import { BlogFilter } from '../components/BlogFilter';
-import PostsList from '../components/PostsList';
-import PostsFilter from '../components/PostsFilter';
+import { usePostsContext } from '../../context';
+import PostsList from '../../components/PostsList';
+import PostsFilter from '../../components/PostsFilter';
 
 const Posts = () => {
   const { getPosts, error, loading, postsData } = usePostsContext();
