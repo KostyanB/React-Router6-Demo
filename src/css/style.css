@@ -262,16 +262,11 @@ h1 {
   color: var(--color-bg);
 }
 
-.container {
-  width: min(900px, 100vw);
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 0 auto;
-}
-
-.active-nav {
+h2 {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: var(--color-active);
-  cursor: default;
 }
 
 button,
@@ -280,6 +275,18 @@ input {
   -webkit-transition: all var(--anima-duration) ease-in-out;
   -o-transition: all var(--anima-duration) ease-in-out;
   transition: all var(--anima-duration) ease-in-out;
+}
+
+.container {
+  width: min(900px, 100vw);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0 auto;
+}
+
+.active-nav {
+  cursor: default;
+  border-bottom: 0.5px solid var(--color-active);
 }
 
 .button {
@@ -303,6 +310,57 @@ input {
 
 .error {
   color: var(--color-error);
+}
+
+.contact {
+  color: var(--color-active);
+  border-bottom: 0.5px solid;
+  border-color: var(--color-bg);
+  font-weight: 500;
+}
+.contact:hover {
+  color: var(--color-bg);
+  border-color: var(--color-active);
+}
+
+header {
+  background-color: var(--color-bg);
+  padding: 1rem 0;
+  text-align: center;
+}
+header > a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+header > a:hover {
+  text-decoration: underline;
+}
+
+main {
+  min-height: calc(100vh - 85px - 22px);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+main ::-webkit-scrollbar {
+  width: 10px;
+}
+main ::-webkit-scrollbar-thumb {
+  background-color: var(--color-active);
+  border-radius: 100px;
+}
+main > div > a, main > div > ul > li > a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
+main > div > a:hover, main > div > ul > li > a:hover {
+  color: var(--color-active);
+}
+main > div > ul > li, main > div > * {
+  margin-bottom: 5px;
+}
+main > div > ul > li > a > span::first-letter, main > div > p::first-letter, main > div > h1::first-letter {
+  text-transform: capitalize;
 }
 
 form {
@@ -344,44 +402,4 @@ form input[type=checkbox] {
 form label {
   -ms-flex-item-align: center;
       align-self: center;
-}
-
-header {
-  background-color: var(--color-bg);
-  padding: 1rem 0;
-  text-align: center;
-}
-header > a {
-  color: white;
-  text-decoration: none;
-  padding: 0 1rem;
-}
-header > a:hover {
-  text-decoration: underline;
-}
-
-main {
-  min-height: calc(100vh - 85px - 22px);
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-main ::-webkit-scrollbar {
-  width: 10px;
-}
-main ::-webkit-scrollbar-thumb {
-  background-color: var(--color-active);
-  border-radius: 100px;
-}
-main > div > a, main > div > ul > li > a {
-  text-decoration: none;
-  color: var(--color-bg);
-}
-main > div > a:hover, main > div > ul > li > a:hover {
-  color: var(--color-active);
-}
-main > div > ul > li, main > div > * {
-  margin-bottom: 5px;
-}
-main > div > ul > li > a > span::first-letter, main > div > p::first-letter, main > div > h1::first-letter {
-  text-transform: capitalize;
 }

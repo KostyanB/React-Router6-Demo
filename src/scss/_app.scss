@@ -28,6 +28,19 @@ h1 {
   color: var(--color-bg);
 }
 
+h2 {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-active);
+}
+
+button,
+a,
+input {
+  transition: all var(--anima-duration) ease-in-out;
+}
+
 .container {
   width: Min(900px, 100vw);
   padding-left: 2rem;
@@ -36,14 +49,8 @@ h1 {
 }
 
 .active-nav {
-  color: var(--color-active);
   cursor: default;
-}
-
-button,
-a,
-input {
-  transition: all var(--anima-duration) ease-in-out;
+  border-bottom: 0.5px solid var(--color-active);
 }
 
 .button {
@@ -59,38 +66,14 @@ input {
   color: var(--color-error);
 }
 
-form {
-  display: flex;
-  // flex-direction: column;
-  gap: 5px;
+.contact {
+  color: var(--color-active);
+  border-bottom: 0.5px solid;
+  border-color: var(--color-bg);
+  font-weight: 500;
 
-  input {
-    @include m.field;
-
-    &:focus {
-      @include m.hover-colors;
-    }
-
-    &[type='submit'],
-    &[type='checkbox'] {
-      cursor: pointer;
-    }
-
-    &[type='submit'] {
-      background: none;
-
-      &:hover {
-        @include m.hover-colors;
-      }
-    }
-
-    &[type='checkbox'] {
-      margin: 0;
-      align-self: center;
-    }
-  }
-
-  label {
-    align-self: center;
+  &:hover {
+    color: var(--color-bg);
+    border-color: var(--color-active);
   }
 }

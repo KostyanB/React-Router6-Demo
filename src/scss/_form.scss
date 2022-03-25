@@ -1,0 +1,37 @@
+@use 'mixins' as m;
+
+form {
+  display: flex;
+  // flex-direction: column;
+  gap: 5px;
+
+  input {
+    @include m.field;
+
+    &:focus {
+      @include m.hover-colors;
+    }
+
+    &[type='submit'],
+    &[type='checkbox'] {
+      cursor: pointer;
+    }
+
+    &[type='submit'] {
+      background: none;
+
+      &:hover {
+        @include m.hover-colors;
+      }
+    }
+
+    &[type='checkbox'] {
+      margin: 0;
+      align-self: center;
+    }
+  }
+
+  label {
+    align-self: center;
+  }
+}
