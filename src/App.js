@@ -5,7 +5,7 @@ import AppRoutes from './components/AppRoutes';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <AuthContextProvider>
         <AppRoutes />
       </AuthContextProvider>

@@ -1,7 +1,17 @@
 main {
-  min-height: calc(100vh - 85px - 22px);
+  flex-grow: 1;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-bg);
+    border-radius: 50px;
+  }
 
   & > div {
     & > a,
