@@ -1,7 +1,7 @@
 @use 'mixins' as m;
 
 :root {
-  --color-bg: #2c2c32;
+  --color-bg: #053453;
   --color-active: #0f7dc6;
   --color-error: #f9004b;
   --anima-duration: 0.3s;
@@ -14,10 +14,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  // width: 100vw;
-  // height: 100vh;
-  // overflow: hidden;
 }
 
 h1 {
@@ -41,16 +37,24 @@ input {
   transition: all var(--anima-duration) ease-in-out;
 }
 
+p {
+  text-indent: 1.5em;
+  text-align: justify;
+}
+
+p,
+h1,
+h2 {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
 .container {
   width: Min(900px, 100vw);
   padding-left: 2rem;
   padding-right: 2rem;
   margin: 0 auto;
-}
-
-.active-nav {
-  cursor: default;
-  border-bottom: 0.5px solid var(--color-active);
 }
 
 .button {
@@ -66,14 +70,29 @@ input {
   color: var(--color-error);
 }
 
+.link {
+  @include m.link-style;
+
+  &:hover {
+    color: var(--color-active);
+  }
+}
+
+.active-nav {
+  cursor: default;
+  border-bottom: 0.5px solid var(--color-active);
+
+  &:hover {
+    color: var(--color-bg);
+  }
+}
+
 .contact {
+  @include m.link-style;
   color: var(--color-active);
-  border-bottom: 0.5px solid;
-  border-color: var(--color-bg);
   font-weight: 500;
 
   &:hover {
     color: var(--color-bg);
-    border-color: var(--color-active);
   }
 }

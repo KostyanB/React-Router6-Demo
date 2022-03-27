@@ -2,6 +2,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { usePostsContext } from '../../context';
 import PostsList from '../../components/PostsList';
 import PostsFilter from '../../components/PostsFilter';
+import makePageWithTitle from '../../components/Hocs/makePageWithTitle';
 
 const Posts = () => {
   const { getPosts, error, loading, postsData } = usePostsContext();
@@ -20,8 +21,9 @@ const Posts = () => {
   };
 
   return (
-    <div>
-      <h1>Our news</h1>
+    <>
+      {/* <div> */}
+      {/* <h1>Our news</h1> */}
       <PostsFilter
         handleSearch={handleSetSearchParams}
         inputName='search'
@@ -39,7 +41,13 @@ const Posts = () => {
       {postsData && <PostsList postQuery={postQuery} latest={latest} />}
       {loading && <div>...Loading</div>}
       {error && <div className='error'>Sorry, error: {error.message}</div>}
-    </div>
+      {/* </div> */}
+    </>
   );
 };
-export default Posts;
+// export default Posts;
+
+const WithTitlePosts = makePageWithTitle(Posts, {
+  title: 'Our news',
+});
+export default WithTitlePosts;

@@ -9,7 +9,7 @@ import {
   EditPost,
 } from '../../pages/BlogSubPages';
 import { AboutMe, ContactMe } from '../../pages/AboutSubPages';
-import AuthRequire from '../Hoks/AuthRequire';
+import AuthRequire from '../Hocs/AuthRequire';
 
 const AppRoutes = () => (
   <Routes>

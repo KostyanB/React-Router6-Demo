@@ -241,7 +241,7 @@ textarea {
 }
 
 :root {
-  --color-bg: #2c2c32;
+  --color-bg: #053453;
   --color-active: #0f7dc6;
   --color-error: #f9004b;
   --anima-duration: 0.3s;
@@ -277,16 +277,22 @@ input {
   transition: all var(--anima-duration) ease-in-out;
 }
 
+p {
+  text-indent: 1.5em;
+  text-align: justify;
+}
+
+p::first-letter,
+h1::first-letter,
+h2::first-letter {
+  text-transform: capitalize;
+}
+
 .container {
   width: min(900px, 100vw);
   padding-left: 2rem;
   padding-right: 2rem;
   margin: 0 auto;
-}
-
-.active-nav {
-  cursor: default;
-  border-bottom: 0.5px solid var(--color-active);
 }
 
 .button {
@@ -312,15 +318,36 @@ input {
   color: var(--color-error);
 }
 
-.contact {
-  color: var(--color-active);
+.link {
   border-bottom: 0.5px solid;
   border-color: var(--color-bg);
+}
+.link:hover {
+  border-color: var(--color-active);
+}
+.link:hover {
+  color: var(--color-active);
+}
+
+.active-nav {
+  cursor: default;
+  border-bottom: 0.5px solid var(--color-active);
+}
+.active-nav:hover {
+  color: var(--color-bg);
+}
+
+.contact {
+  border-bottom: 0.5px solid;
+  border-color: var(--color-bg);
+  color: var(--color-active);
   font-weight: 500;
 }
 .contact:hover {
-  color: var(--color-bg);
   border-color: var(--color-active);
+}
+.contact:hover {
+  color: var(--color-bg);
 }
 
 header {
@@ -342,13 +369,6 @@ main {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-main ::-webkit-scrollbar {
-  width: 10px;
-}
-main ::-webkit-scrollbar-thumb {
-  background-color: var(--color-active);
-  border-radius: 100px;
-}
 main > div > a, main > div > ul > li > a {
   text-decoration: none;
   color: var(--color-bg);
@@ -356,11 +376,8 @@ main > div > a, main > div > ul > li > a {
 main > div > a:hover, main > div > ul > li > a:hover {
   color: var(--color-active);
 }
-main > div > ul > li, main > div > * {
+main > div > ul > li, main > div > *, main > div > * > * {
   margin-bottom: 5px;
-}
-main > div > ul > li > a > span::first-letter, main > div > p::first-letter, main > div > h1::first-letter {
-  text-transform: capitalize;
 }
 
 form {
@@ -368,6 +385,9 @@ form {
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+}
+form > * {
+  margin: 0 !important;
 }
 form input {
   width: -webkit-fit-content;
@@ -395,7 +415,6 @@ form input[type=submit]:hover {
   color: var(--color-active);
 }
 form input[type=checkbox] {
-  margin: 0;
   -ms-flex-item-align: center;
       align-self: center;
 }

@@ -5,6 +5,10 @@ form {
   // flex-direction: column;
   gap: 5px;
 
+  & > * {
+    margin: 0 !important;
+  }
+
   input {
     @include m.field;
 
@@ -26,7 +30,6 @@ form {
     }
 
     &[type='checkbox'] {
-      margin: 0;
       align-self: center;
     }
   }

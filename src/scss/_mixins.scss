@@ -24,3 +24,12 @@
   font: inherit;
   @include base-colors;
 }
+
+@mixin link-style {
+  border-bottom: 0.5px solid;
+  border-color: var(--color-bg);
+
+  &:hover {
+    border-color: var(--color-active);
+  }
+}

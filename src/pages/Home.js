@@ -1,8 +1,8 @@
-const Home = () => {
-  return (
-    <div>
-      <h1>Get started with React-Router 6-th release</h1>
-    </div>
-  );
-};
-export default Home;
+import makePageWithTitle from '../components/Hocs/makePageWithTitle';
+
+const Home = () => <p>Get started with React-Router 6-th release</p>;
+
+const HomeWithTitle = makePageWithTitle(Home, {
+  title: 'React Router 6',
+});
+export default HomeWithTitle;

@@ -1,15 +1,15 @@
 import { useCallback } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import makePageWithTitle from '../components/Hocs/makePageWithTitle';
 
 const About = () => {
   const setActive = useCallback(
-    ({ isActive }) => (isActive ? 'active-nav' : ''),
+    ({ isActive }) => `link ${isActive ? 'active-nav' : ''}`,
     [],
   );
 
   return (
-    <div>
-      <h1>About</h1>
+    <>
       <p>
         This is a training website about using Api from new 6-th release
         React-router-dom library.
@@ -32,7 +32,9 @@ const About = () => {
                 <Route path="team" element={<p>Our team</p>} />
             </Routes> */}
       <Outlet />
-    </div>
+    </>
   );
 };
-export default About;
+
+const AboutWithTitle = makePageWithTitle(About, { title: 'About' });
+export default AboutWithTitle;

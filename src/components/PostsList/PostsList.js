@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { usePostsContext } from '../../context';
+import formatText from '../../helpers/formatText';
 import env from '../../env.json';
 
 const Posts = ({ postQuery, latest }) => {
@@ -22,7 +23,7 @@ const Posts = ({ postQuery, latest }) => {
         .map(post => (
           <li key={post.id}>
             <Link to={`/posts/${post.id}`}>
-              {post.id}. <span>{post.title}</span>
+              {post.id}. <span>{formatText(post.title)}</span>
             </Link>
           </li>
         ))}

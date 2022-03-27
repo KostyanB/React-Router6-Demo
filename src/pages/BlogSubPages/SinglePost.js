@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { usePostsContext } from '../../context';
 
+import makePageWithTitle from '../../components/Hocs/makePageWithTitle';
+
 import GoBackBtn from '../../components/GoBackBtn';
+import Post from '../../components/Post';
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -14,18 +17,16 @@ const SinglePost = () => {
     [id, postsDataObj],
   );
 
+  const PostWithTitle = makePageWithTitle(Post, {
+    title: post?.title,
+    body: post?.body,
+    id,
+  });
+
   return (
     <div>
       <GoBackBtn />
-      {post && (
-        <>
-          <h1>{post.title}</h1>
-          <p>{post.body}</p>
-          <Link to={`/posts/${id}/edit`} className='button'>
-            Edit this post
-          </Link>
-        </>
-      )}
+      {post && <PostWithTitle />}
     </div>
   );
 };

@@ -2,17 +2,6 @@ main {
   min-height: calc(100vh - 85px - 22px);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  // overflow-y: auto;
-  // overflow-x: hidden;
-
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--color-active);
-    border-radius: 100px;
-  }
 
   & > div {
     & > a,
@@ -21,18 +10,14 @@ main {
       color: var(--color-bg);
 
       &:hover {
-        // text-decoration: underline;
         color: var(--color-active);
       }
     }
+
     & > ul > li,
-    & > * {
+    & > *,
+    & > * > * {
       margin-bottom: 5px;
-    }
-    & > ul > li > a > span::first-letter,
-    & > p::first-letter,
-    & > h1::first-letter {
-      text-transform: capitalize;
     }
   }
 }

@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-const Blog1 = () => (
+const Blog = () => (
   <>
     <Outlet />
   </>
 );
-export default Blog1;
+export default Blog;
